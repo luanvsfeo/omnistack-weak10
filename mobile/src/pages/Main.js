@@ -65,7 +65,7 @@ function Main({navigation}){
 
 
     function handleRegiononChange(region){
-        console.log(region)
+       
         setCurrentRegion(region);
     }
 
@@ -79,7 +79,7 @@ function Main({navigation}){
     <MapView onRegionChangeComplete={handleRegiononChange} initialRegion={currentRegion} style={styles.map} >
         {devs.map(dev=> (
             <Marker key={dev._id} coordinate={{ latitude: dev.location.coordinates[1], longitude:dev.location.coordinates[0]}}>
-            
+            {/* <Image sytle={styles.avatar} source={{uri:dev.avatar_url}}/>*/}
             <Callout onPress={()=>{
                 navigation.navigate('Profile',{github_username:dev.github_username})
             }}>
